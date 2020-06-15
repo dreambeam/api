@@ -1,5 +1,5 @@
 
-absolutePath = __dirname + '/view/index.html'
+absolutePath = __dirname + '/views/index.html'
 
 var express = require('express');
 var app = express();
@@ -13,7 +13,7 @@ var app = express();
 
 /** 1) Meet the node console. */
 console.log("Hello, World!");
-console.log()
+console.log(absolutePath);
 
 /** 2) A first working Express Server */
 /*app.get('/',
@@ -25,7 +25,7 @@ console.log()
 /** 3) Serve an HTML file */
 app.get('/',
        function(req, res){
-  res.sendFile() 
+  res.sendFile(absolutePath);
 })
 
 /** 4) Serve static assets  */
