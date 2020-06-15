@@ -1,4 +1,6 @@
 
+absolutePath = __dirname + '/view/index.html'
+
 var express = require('express');
 var app = express();
 
@@ -11,14 +13,20 @@ var app = express();
 
 /** 1) Meet the node console. */
 console.log("Hello, World!");
+console.log()
 
 /** 2) A first working Express Server */
-function(req, res){
-  "Hello Express"
+/*app.get('/',
+        function(req, res){
+  res.send("Hello Express");
 }
+       ) */
 
 /** 3) Serve an HTML file */
-
+app.get('/',
+       function(req, res){
+  res.sendFile() 
+})
 
 /** 4) Serve static assets  */
 
