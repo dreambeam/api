@@ -30,13 +30,12 @@ app.get('/',
 
 var path = __dirname + '/public'
 /** 4) Serve static assets  */
-express.static(path)
-app.use(path, middlewareFunction)
+app.use(express.static(path))
 
 
 /** 5) serve JSON on a specific route */
 
-
+app.ge
 /** 6) Use the .env file to configure the app */
  
  
