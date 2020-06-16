@@ -28,7 +28,10 @@ app.get('/',
   res.sendFile(absolutePath);
 })
 
+var path = __dirname + '/public'
 /** 4) Serve static assets  */
+express.static(path)
+app.use(path, middlewareFunction)
 
 
 /** 5) serve JSON on a specific route */
