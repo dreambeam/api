@@ -37,8 +37,8 @@ app.use(express.static(path))
 app.get('/json', function(req,res){
   var response = "Hello json"
   if(process.env.MESSAGE_STYLE==='uppercase'){
-    response = response.toUpperCase();
-    res.send({"message": response })
+//    response = response.toUpperCase();
+    res.json({'message': 'HELLO JSON'})
   }
   else{
     res.send({"message": "Hello json"})
