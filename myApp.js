@@ -13,7 +13,7 @@ var app = express();
 
 /** 1) Meet the node console. */
 console.log("Hello, World!");
-console.log(absolutePath);
+//console.log(absolutePath);
 
 /** 2) A first working Express Server */
 /*app.get('/',
@@ -23,22 +23,22 @@ console.log(absolutePath);
        ) */
 
 /** 3) Serve an HTML file */
-app.get('/',
-       function(req, res){
-  res.sendFile(absolutePath);
-})
+//app.get('/',
+//       function(req, res){
+//  res.sendFile(absolutePath);
+//})
 
-var path = __dirname + '/public'
+//var path = __dirname + '/public'
 /** 4) Serve static assets  */
-app.use(express.static(path))
+//app.use(express.static(path))
 
 
 /** 5) serve JSON on a specific route */
 app.get('/json', function(req,res){
-  var response = "Hello json"
+//  var response = "Hello json"
   if(process.env.MESSAGE_STYLE==='uppercase'){
 //    response = response.toUpperCase();
-    res.json({'message': 'HELLO JSON'})
+    res.json({"message": "HELLO JSON"})
   }
   else{
     res.send({"message": "Hello json"})
