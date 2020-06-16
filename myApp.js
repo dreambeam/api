@@ -1,5 +1,5 @@
 
-absolutePath = __dirname + '/views/index.html'
+//absolutePath = __dirname + '/views/index.html'
 
 var express = require('express');
 var app = express();
@@ -12,7 +12,7 @@ var app = express();
 
 
 /** 1) Meet the node console. */
-console.log("Hello, World!");
+//console.log("Hello, World!");
 //console.log(absolutePath);
 
 /** 2) A first working Express Server */
@@ -34,17 +34,18 @@ console.log("Hello, World!");
 
 
 /** 5) serve JSON on a specific route */
+
 app.get('/json', function(req,res){
-//  var response = "Hello json"
-  if(process.env.MESSAGE_STYLE==='uppercase'){
-//    response = response.toUpperCase();
-    res.json({"message": "HELLO JSON"})
-  }
+  let data = {"message": "Hello json"};
+  if(process.env.MESSAGE_STYLE==="uppercase"){
+    data.message = data.message.toUpperCase();
+}
   else{
-    res.send({"message": "Hello json"})
+    return res.json(data);
   }
-  }
+}
 )
+
 /** 6) Use the .env file to configure the app */
  
  
