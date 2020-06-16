@@ -35,16 +35,23 @@ var app = express();
 
 /** 5) serve JSON on a specific route */
 
-app.get('/json', function(req,res){
-  let data = {"message": "Hello json"};
-  if(process.env.MESSAGE_STYLE==="uppercase"){
-    data.message = data.message.toUpperCase();
+/*app.get('/json', function(req,res){
+  let message = "Hello json"
+  if(process.env.MESSAGE_STYLE === 'uppercase'){
+    message = message.toUpperCase();
 }
-  else{
-    return res.json(data);
-  }
-}
-)
+  return res.send({"message": message});
+}); 8
+
+let object = {"message": "Hello json"};
+
+app.get("/json", function(req, res){
+  
+  if(process.env.MESSAGE_STYLE === "uppercase"){
+    object.message = object.message.toUpperCase();
+ }
+  res.json(object);
+})
 
 /** 6) Use the .env file to configure the app */
  
