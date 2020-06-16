@@ -41,7 +41,7 @@ app.get('/json', function(req,res){
     res.send({"message": response })
   }
   else{
-    res.send({"message": response})
+    res.send({"message": "Hello json"})
   }
   }
 )
