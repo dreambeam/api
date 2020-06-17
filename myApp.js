@@ -4,6 +4,19 @@
 var express = require('express');
 var app = express();
 
+/*   console.log(req.method,
+              " ",
+             req.path,
+              " ",
+              "-",
+              " ",
+             req.ip);*/
+
+app.use('/json', function(req, res, next){
+  var string = req.method + " " + req.path + " - " + req.ip;
+  console.log(string);
+  next();  
+})
 
 // --> 7)  Mount the Logger middleware here
 
@@ -34,7 +47,7 @@ var app = express();
 
 
 /** 5) serve JSON on a specific route */
-
+/*
 app.get('/json', function(req,res){
   let message = "Hello json"
   if(process.env.MESSAGE_STYLE === 'uppercase'){
@@ -43,6 +56,7 @@ app.get('/json', function(req,res){
   return res.json({"message": message});
 });
 
+*/
 /*let object = {"message": "Hello json"};
 
 app.get("/json",(req, res)=>{
@@ -59,12 +73,6 @@ app.get("/json",(req, res)=>{
 /** 7) Root-level Middleware - A logger */
 //  place it before all the routes !
 
-app.get('/', function(req, res, next){
-  console.log(req.method,
-             req.path,
-             req.ip);
-  next();  
-}
 
 /** 8) Chaining middleware. A Time server */
 
