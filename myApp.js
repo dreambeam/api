@@ -4,16 +4,15 @@
 var express = require('express');
 var app = express();
 
-var router = express.Router()
-
-router.use(function(req, res, next){
-  var string = req.method + " " + req.path + " - " + req.ip;
-  console.log(string);
-  next();  
-})
 
 // --> 7)  Mount the Logger middleware here
+app.get('/', function(req, res, next){
+//  var string = req.method + " " + req.path + " - " + req.ip;
+//  console.log(string);
+  console.log(`${req.method} ${req.path} - ${req.ip}`);
 
+  next();  
+})
 
 // --> 11)  Mount the body-parser middleware  here
 
@@ -41,7 +40,7 @@ router.use(function(req, res, next){
 
 
 /** 5) serve JSON on a specific route */
-
+/*
 app.get('/json', function(req,res){
   let message = "Hello json"
   if(process.env.MESSAGE_STYLE === 'uppercase'){
@@ -49,6 +48,8 @@ app.get('/json', function(req,res){
 }
   return res.json({"message": message});
 });
+
+*/
 
 /*let object = {"message": "Hello json"};
 
